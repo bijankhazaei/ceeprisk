@@ -10,7 +10,7 @@
 services:
   server:
     build:
-      context: .
+      context: ./server
       dockerfile: Dockerfile-dev
     environment:
       NODE_ENV: production
