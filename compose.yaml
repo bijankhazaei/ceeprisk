@@ -13,11 +13,22 @@ services:
       context: ./server
       dockerfile: Dockerfile-dev
     environment:
-      NODE_ENV: production
+      NODE_ENV: development
     ports:
-      - 80:3000
+      - 8080:3000
     volumes:
-      - ./:/usr/app/
+      - ./server:/usr/app/
+  client:
+    build:
+      context: ./client
+      dockerfile: Dockerfile-dev
+    environment:
+      NODE_ENV: development
+    ports:
+      - 3000:3000
+    volumes:
+      - ./client:/usr/app/
+
 # The commented out section below is an example of how to define a PostgreSQL
 # database that your application can use. `depends_on` tells Docker Compose to
 # start the database before your application. The `db-data` volume persists the
