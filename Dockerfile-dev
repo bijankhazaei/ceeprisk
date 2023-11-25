@@ -30,4 +30,4 @@ COPY . .
 EXPOSE 3000
 
 # Run the application.
-CMD npm run build && src/bin/www
+CMD npm run dev
